@@ -8,15 +8,18 @@ namespace CodeChallenges
 {
     class Tests
     {
-        public static int DivisibleBy(int a, int b)
+        public static int Sum(int n)
         {
-            public static int Sum(int n)
+
+            int sum = 0;
+            if (n <= 1)
             {
-
+                return 1;
             }
-
-
-            return a;
+            else
+            {
+                return n+Sum(n - 1);
+            }
         }
     }
     class Program
