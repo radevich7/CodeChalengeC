@@ -7,18 +7,20 @@ using System.IO;
 using System.Globalization;
 namespace CodeChallenges
 {
+    //function add(a)
+    //{
+    //    return function(b) {
+    //        return a + b;
+    //    }
+    //}
     class Tests
     {
-        public static bool isIdentical(string str)
+        public static string HackerSpeak(string str)
         {
-            for (int i = 1; i < str.Length; i++)
-            {
-                if (str[0] != str[i])
-                {
-                    return false;
-                }
-            }
-            return true;
+            //a=>4  e=>3    i=>1    o=>0   s=>5
+
+            return str.Replace('a', '4').Replace('e','3').Replace('i','1').Replace('o','0').Replace('s','5');
+
         }
     }
     class Program
@@ -26,7 +28,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.isIdentical("kkkk"));
+            Console.WriteLine(Tests.HackerSpeak("javascript is cool"));
 
             Console.ReadKey();
         }
