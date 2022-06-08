@@ -9,10 +9,16 @@ namespace CodeChallenges
 {
     class Tests
     {
-        public static string MonthName(int num)
+        public static bool isIdentical(string str)
         {
-            
-            return DateTimeFormatInfo.CurrentInfo.GetAbbreviatedMonthName(num);
+            for (int i = 1; i < str.Length; i++)
+            {
+                if (str[0] != str[i])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
     class Program
@@ -20,7 +26,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.MonthName(1));
+            Console.WriteLine(Tests.isIdentical("kkkk"));
 
             Console.ReadKey();
         }
