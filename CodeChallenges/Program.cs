@@ -4,22 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Globalization;
 namespace CodeChallenges
 {
     class Tests
     {
-        public static int Sum(int n)
+        public static string MonthName(int num)
         {
-
-            int sum = 0;
-            if (n <= 1)
-            {
-                return 1;
-            }
-            else
-            {
-                return n+Sum(n - 1);
-            }
+            
+            return DateTimeFormatInfo.CurrentInfo.GetAbbreviatedMonthName(num);
         }
     }
     class Program
@@ -27,7 +20,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.Sum(5));
+            Console.WriteLine(Tests.MonthName(1));
 
             Console.ReadKey();
         }
