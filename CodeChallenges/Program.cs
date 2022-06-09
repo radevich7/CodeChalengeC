@@ -15,20 +15,24 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string HackerSpeak(string str)
+        public static string DoubleChar(string str)
         {
-            //a=>4  e=>3    i=>1    o=>0   s=>5
+            string result = "";
+            for (int i = 0; i < str.Length; i++)
+            {
 
-            return str.Replace('a', '4').Replace('e','3').Replace('i','1').Replace('o','0').Replace('s','5');
-
+                result += str[i] + ""+str[i];
+            }
+            return result;
         }
     }
     class Program
     {
+
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.HackerSpeak("javascript is cool"));
+            Console.WriteLine(Tests.DoubleChar("String"));
 
             Console.ReadKey();
         }
