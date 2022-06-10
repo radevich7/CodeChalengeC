@@ -15,15 +15,12 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string DoubleChar(string str)
+        public static string Reverse(string str)
         {
-            string result = "";
-            for (int i = 0; i < str.Length; i++)
-            {
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
 
-                result += str[i] + ""+str[i];
-            }
-            return result;
+            return new String(charArray);
         }
     }
     class Program
@@ -32,7 +29,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.DoubleChar("String"));
+            Console.WriteLine(Tests.Reverse("Hello World"));
 
             Console.ReadKey();
         }
