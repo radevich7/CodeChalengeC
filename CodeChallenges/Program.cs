@@ -15,11 +15,10 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string GetWord(string left, string right)
+        public static int[] NoOdds(int[] arr)
         {
+            return Array.FindAll(arr, x => x % 2 == 0);
 
-
-            return left.Substring(0,1).ToUpper() +("")+ left.Substring(1)+ "" + right;
         }
     }
     class Program
@@ -28,7 +27,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.GetWord("seas", "onal"));
+            Console.WriteLine(Tests.NoOdds(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }));
 
             Console.ReadKey();
         }
