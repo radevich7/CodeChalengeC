@@ -15,10 +15,14 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static int[] NoOdds(int[] arr)
+        public static string ReverseCapitalize(string str)
         {
-            return Array.FindAll(arr, x => x % 2 == 0);
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            string result = new string(charArray);
 
+            return result.ToUpper();
+         
         }
     }
     class Program
@@ -27,7 +31,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.NoOdds(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 }));
+            Console.WriteLine(Tests.ReverseCapitalize("abc"));
 
             Console.ReadKey();
         }
