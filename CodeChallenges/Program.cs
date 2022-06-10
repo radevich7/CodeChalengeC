@@ -15,14 +15,11 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string ReverseCapitalize(string str)
+        public static bool IsAvgWhole(int[] arr)
         {
-            char[] charArray = str.ToCharArray();
-            Array.Reverse(charArray);
-            string result = new string(charArray);
 
-            return result.ToUpper();
-         
+            return arr.Average() % 1 == 0;
+
         }
     }
     class Program
@@ -31,7 +28,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.ReverseCapitalize("abc"));
+            Console.WriteLine(Tests.IsAvgWhole(new int[] { 3, 5, 9, 1 }));
 
             Console.ReadKey();
         }
