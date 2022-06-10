@@ -15,12 +15,11 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string Reverse(string str)
+        public static string GetWord(string left, string right)
         {
-            char[] charArray = str.ToCharArray();
-            Array.Reverse(charArray);
 
-            return new String(charArray);
+
+            return left.Substring(0,1).ToUpper() +("")+ left.Substring(1)+ "" + right;
         }
     }
     class Program
@@ -29,7 +28,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.Reverse("Hello World"));
+            Console.WriteLine(Tests.GetWord("seas", "onal"));
 
             Console.ReadKey();
         }
