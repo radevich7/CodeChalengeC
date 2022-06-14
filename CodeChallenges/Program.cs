@@ -15,11 +15,10 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static bool IsAvgWhole(int[] arr)
+        public static string FormatPhoneNumber(int[] numbers)
         {
-
-            return arr.Average() % 1 == 0;
-
+            string result = string.Join("", numbers);
+            return result.Insert(0, "(").Insert(4, ")").Insert(5, " ").Insert(9, "-");
         }
     }
     class Program
@@ -28,7 +27,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.IsAvgWhole(new int[] { 3, 5, 9, 1 }));
+            Console.WriteLine(Tests.FormatPhoneNumber(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }));
 
             Console.ReadKey();
         }
