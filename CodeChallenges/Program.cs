@@ -15,10 +15,10 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string FormatPhoneNumber(int[] numbers)
+        public static string SpaceMeOut(string str)
         {
-            string result = string.Join("", numbers);
-            return result.Insert(0, "(").Insert(4, ")").Insert(5, " ").Insert(9, "-");
+            char[] charArr = str.ToCharArray();
+            return string.Join(" ", charArr);
         }
     }
     class Program
@@ -27,7 +27,7 @@ namespace CodeChallenges
         static void Main(string[] args)
         {
 
-            Console.WriteLine(Tests.FormatPhoneNumber(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }));
+            Console.WriteLine(Tests.SpaceMeOut("space"));
 
             Console.ReadKey();
         }
