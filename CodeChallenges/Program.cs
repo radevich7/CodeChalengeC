@@ -15,23 +15,24 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string SpaceMeOut(string str)
+        public static string ImposterFormula(int i, int p)
         {
-            char[] charArr = str.ToCharArray();
-            return string.Join(" ", charArr);
+            //double res = i / p;
+            double abs = (double)i / p;
+            Console.WriteLine(abs);
+            return (Math.Round(100 * (double)i / p)).ToString() + "%";
         }
-    }
-    class Program
-    {
-
-        static void Main(string[] args)
+        class Program
         {
 
-            Console.WriteLine(Tests.SpaceMeOut("space"));
+            static void Main(string[] args)
+            {
 
-            Console.ReadKey();
+                Console.WriteLine(Tests.ImposterFormula(3, 7));
+
+                Console.ReadKey();
+            }
+
         }
 
     }
-
-}
