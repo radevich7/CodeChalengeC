@@ -15,12 +15,21 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string ImposterFormula(int i, int p)
+        public static int[] HashPlusCount(string s)
         {
-            //double res = i / p;
-            double abs = (double)i / p;
-            Console.WriteLine(abs);
-            return (Math.Round(100 * (double)i / p)).ToString() + "%";
+
+            int[] result = new int[2] {0,0 };
+            foreach (var item in s)
+            {
+                if (item == '#')
+                    result[0]++;
+                if (item == '+')
+                    result[1]++;
+
+            }
+
+            return result;
+
         }
         class Program
         {
@@ -28,7 +37,7 @@ namespace CodeChallenges
             static void Main(string[] args)
             {
 
-                Console.WriteLine(Tests.ImposterFormula(3, 7));
+                Console.WriteLine(Tests.HashPlusCount("+++++++"));
 
                 Console.ReadKey();
             }
