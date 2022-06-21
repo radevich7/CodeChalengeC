@@ -15,21 +15,11 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static int[] HashPlusCount(string s)
+        public static string AlphabetSoup(string str)
         {
-
-            int[] result = new int[2] {0,0 };
-            foreach (var item in s)
-            {
-                if (item == '#')
-                    result[0]++;
-                if (item == '+')
-                    result[1]++;
-
-            }
-
-            return result;
-
+            char[] arr = str.ToCharArray();
+            Array.Sort(arr);
+            return new string(arr);
         }
         class Program
         {
@@ -37,7 +27,7 @@ namespace CodeChallenges
             static void Main(string[] args)
             {
 
-                Console.WriteLine(Tests.HashPlusCount("+++++++"));
+                Console.WriteLine(Tests.AlphabetSoup("something"));
 
                 Console.ReadKey();
             }
