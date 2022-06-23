@@ -15,19 +15,21 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string AlphabetSoup(string str)
+        public static string[] isFourLetters(string[] arr)
         {
-            char[] arr = str.ToCharArray();
-            Array.Sort(arr);
-            return new string(arr);
-        }
+            List<string> words = new List<string>();
+            words.AddRange(arr);
+            IEnumerable<string> query = words.Where(word => word.Length <= 4);
+
+            return
+         }
         class Program
         {
 
             static void Main(string[] args)
             {
 
-                Console.WriteLine(Tests.AlphabetSoup("something"));
+                Console.WriteLine(Tests.isFourLetters(new string[] { "Ryan", "Kieran", "Jason", "Matt" }));
 
                 Console.ReadKey();
             }
