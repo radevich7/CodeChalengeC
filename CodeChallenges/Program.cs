@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Globalization;
+using System.Text.RegularExpressions;
+
 namespace CodeChallenges
 {
     //function add(a)
@@ -15,18 +17,20 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string SubReddit(string link)
-        {
-            string[] splitted = link.Split('/');
-            return splitted[splitted.Length-2];
-        }
+ 
+            public static string ReplaceVowels(string str, string ch)
+            {
+            return Regex.Replace(str, "[aeuio]",ch);
+
+            }
+        
         class Program
         {
 
             static void Main(string[] args)
             {
 
-                Console.WriteLine(Tests.SubReddit("https://www.reddit.com/r/relationships/"));
+                Console.WriteLine(Tests.ReplaceVowels("https://www.reddit.com/r/relationships/", "*"));
 
                 Console.ReadKey();
             }
