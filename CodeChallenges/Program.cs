@@ -15,21 +15,18 @@ namespace CodeChallenges
     //}
     class Tests
     {
-        public static string[] isFourLetters(string[] arr)
+        public static string SubReddit(string link)
         {
-            List<string> words = new List<string>();
-            words.AddRange(arr);
-            IEnumerable<string> query = words.Where(word => word.Length <= 4);
-
-            return
-         }
+            string[] splitted = link.Split('/');
+            return splitted[splitted.Length-2];
+        }
         class Program
         {
 
             static void Main(string[] args)
             {
 
-                Console.WriteLine(Tests.isFourLetters(new string[] { "Ryan", "Kieran", "Jason", "Matt" }));
+                Console.WriteLine(Tests.SubReddit("https://www.reddit.com/r/relationships/"));
 
                 Console.ReadKey();
             }
@@ -37,3 +34,4 @@ namespace CodeChallenges
         }
 
     }
+}
