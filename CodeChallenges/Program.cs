@@ -17,20 +17,19 @@ namespace CodeChallenges
     //}
     class Tests
     {
- 
-            public static string ReplaceVowels(string str, string ch)
-            {
-            return Regex.Replace(str, "[aeuio]",ch);
 
-            }
-        
+        public static object[] RemoveDups(object[] str)
+        {
+            return str.Distinct().ToArray();
+        }
+
         class Program
         {
 
             static void Main(string[] args)
             {
 
-                Console.WriteLine(Tests.ReplaceVowels("https://www.reddit.com/r/relationships/", "*"));
+                Console.WriteLine(Tests.RemoveDups(new object[] { "John", "Taylor", "John" }));
 
                 Console.ReadKey();
             }
