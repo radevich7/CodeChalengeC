@@ -9,18 +9,15 @@ using System.Text.RegularExpressions;
 
 namespace CodeChallenges
 {
-    //function add(a)
-    //{
-    //    return function(b) {
-    //        return a + b;
-    //    }
-    //}
+   
     class Tests
     {
 
-        public static object[] RemoveDups(object[] str)
+        public static double[] UniqueSort(double[] arr)
         {
-            return str.Distinct().ToArray();
+               double[] uniqueNumbers= arr.Distinct().ToArray();
+
+            return 
         }
 
         class Program
@@ -29,7 +26,7 @@ namespace CodeChallenges
             static void Main(string[] args)
             {
 
-                Console.WriteLine(Tests.RemoveDups(new object[] { "John", "Taylor", "John" }));
+                Console.WriteLine(Tests.UniqueSort(new double[] { 1, 5, 8, 2, 3, 4, 4, 4, 10 }));
 
                 Console.ReadKey();
             }
