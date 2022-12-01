@@ -5,3 +5,10 @@ C:\Users\Julian.Radevych\source\repos\CodeChallenges\CodeChallenges\bin\Debug\Co
 C:\Users\Julian.Radevych\source\repos\CodeChallenges\CodeChallenges\bin\Debug\CodeChallenges.pdb
 C:\Users\Julian.Radevych\source\repos\CodeChallenges\CodeChallenges\obj\Debug\CodeChallenges.exe
 C:\Users\Julian.Radevych\source\repos\CodeChallenges\CodeChallenges\obj\Debug\CodeChallenges.pdb
+C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\obj\Debug\CodeChallenges.csproj.AssemblyReference.cache
+C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\obj\Debug\CodeChallenges.csproj.CoreCompileInputs.cache
+C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\obj\Debug\CodeChallenges.exe
+C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\obj\Debug\CodeChallenges.pdb
+C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\bin\Debug\CodeChallenges.exe.config
+C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\bin\Debug\CodeChallenges.exe
+C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\bin\Debug\CodeChallenges.pdb
