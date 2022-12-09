@@ -12,3 +12,4 @@ C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\obj\Debug\Co
 C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\bin\Debug\CodeChallenges.exe.config
 C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\bin\Debug\CodeChallenges.exe
 C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\bin\Debug\CodeChallenges.pdb
+C:\Users\Julian.Radevych\Desktop\study\CodeChalengeC\CodeChallenges\obj\Debug\CodeChallenges.csproj.SuggestedBindingRedirects.cache

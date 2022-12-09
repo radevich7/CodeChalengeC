@@ -6,52 +6,106 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 namespace CodeChallenges
 {
- 
+    public class ListNode
+    {
+        public int val;
+        public ListNode next;
+        public ListNode(int val = 0, ListNode next = null)
+        {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
     class Tests
     {
-   
 
-        static int RemoveElement(int[] nums, int val)
+        static public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
-            if (nums.Length == 0)
-                return 0;
 
-            int counter = 0;
-            for (int i = 0; i < nums.Length; i++)
+
+            var left = 0;
+            var list = new Stack();
+
+            while (l1 != null || l2 != null)
             {
-                if (nums[i] == val)
+                var first = l1 == null ? 0 : l1.val;
+                var second = l2 == null ? 0 : l2.val;
+
+
+                var add = (first + second + left);
+
+                if (add > 9)
                 {
-                    nums[i] = int.MaxValue;
-                    counter++;
+                    left = Convert.ToInt32(add.ToString().Substring(0, 1));
+                }
+                else
+                {
+                    left = 0;
+                }
+
+
+                list.Push(add % 10);
+
+
+                if (l1 == null && l2 != null)
+                {
+                    l1 = null;
+                    l2 = l2.next;
+                }
+                else if (l1 != null && l2 == null)
+                {
+                    l1 = l1.next;
+                    l2 = null;
+                }
+                else
+                {
+                    l1 = l1.next;
+                    l2 = l2.next;
                 }
 
             }
-
-            Array.Sort(nums);
-
-
-            foreach (var item in nums)
+            if (left > 0)
             {
-                Console.WriteLine(item) ;
+                list.Push(left);
             }
-            return nums.Length-counter;
+
+            var returnNode = new ListNode((int)list.Pop());
+            while (list.Count > 0)
+            {
+
+                returnNode = new ListNode((int)list.Pop(), returnNode);
+            }
+
+
+
+
+
+            return returnNode;
 
         }
-        class Program
+
+
+
+
+    }
+    class Program
+    {
+
+        static void Main(string[] args)
         {
+            var l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+            var l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
-            static void Main(string[] args)
-            {
 
 
-                Console.WriteLine(Tests.RemoveElement( new int[] { 3,2,2,3}, 2));
+            Console.WriteLine(Tests.AddTwoNumbers(l1, l2));
 
-                Console.ReadKey();
-            }
-
+            Console.ReadKey();
         }
 
     }
