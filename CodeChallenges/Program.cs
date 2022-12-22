@@ -16,32 +16,24 @@ namespace CodeChallenges
 
         static public int LengthOfLongestSubstring(string s)
         {
-            if(s.Length)
-            {
-                return 1;
-            }
-            Dictionary<char, int> map = new Dictionary<char, int>();
+            if (s == null || s == String.Empty)
+                return 0;
 
-            char[] array = s.ToCharArray();
-            int maximumChar = 0;
+            HashSet<char> set = new HashSet<char>();
+            int currentMax = 0,
+                i = 0,
+                j = 0;
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                try
+            while (j < s.Length)
+                if (!set.Contains(s[j]))
                 {
-                    map.Add(array[i], 0);
-                    maximumChar++;
-
+                    set.Add(s[j++]);
+                    currentMax = Math.Max(currentMax, j - i);
                 }
-                catch (Exception)
-                {
-                maximumChar=maximumChar>map.Count ? maximumChar : map.Count;
-                    i--;
+                else
+                    set.Remove(s[i++]);
 
-                    map.Clear();
-                }
-            }
-            return maximumChar;
+            return currentMax;
 
         }
 
@@ -60,7 +52,7 @@ class Program
 
 
 
-        Console.WriteLine(Tests.LengthOfLongestSubstring("pwwkew"));
+        Console.WriteLine(Tests.LengthOfLongestSubstring("abcbbcbb"));
 
         Console.ReadKey();
     }
