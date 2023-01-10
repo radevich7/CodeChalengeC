@@ -15,64 +15,61 @@ namespace CodeChallenges
     class Tests
     {
 
-        static public string LongestPalindrome(string s)
+        static public ListNode DeleteDuplicates(ListNode head)
         {
-            if (s.Length <= 1 && String.IsNullOrEmpty(s)) return s;
-            int start = 0;
-            int end = 0;
-
-            for (int i = 0; i < s.Length; i++)
+            if (head == null) return head;
+            ListNode temp = head;
+            while (temp.next != null)
             {
-                int length1 = Expand(s, i, i);
-                int length2 = Expand(s, i, i + 1);
-
-                int length = Math.Max(length1, length2);
-
-                if (length > end - start)
+                if (temp.val == temp.next.val)
                 {
-                    start = i - ((length - 1) / 2);
-                    end = i + (length / 2);
+                    temp.next = temp.next.next;
                 }
-
-
+                else
+                {
+                    temp = temp.next;
+                }
             }
-            return s.Substring(start, end + 1);
-
-
+            return head;
         }
-        static public int Expand(string s, int left, int right)
+
+
+
+    }
+
+    public class ListNode
+    {
+        public int val;
+        public ListNode next;
+        public ListNode(int val = 0, ListNode next = null)
         {
-            if (s == null || left > right) return 0;
-
-            while (left >= 0 && right < s.Length && s[left] == s[right])
-            {
-                left--;
-                right++;
-            }
-
-            return right - left - 1;
-
-
+            this.val = val;
+            this.next = next;
         }
     }
 
-
-
-
-}
-class Program
-{
-
-    static void Main(string[] args)
+    class Program
     {
 
+        static void Main(string[] args)
+        {
+            ListNode listNode = new ListNode();
+            listNode.val = 1;
+
+            ListNode listnode1 = new ListNode(1,listNode);
+            ListNode listnode2 = new ListNode(3, listnode1);
+            ListNode listnode3 = new ListNode(1, listnode2);
+
+          
 
 
 
-        Console.WriteLine(Tests.LongestPalindrome("babad"));
 
-        Console.ReadKey();
+            Console.WriteLine(Tests.DeleteDuplicates(listnode3));
+
+            Console.ReadKey();
+        }
+
     }
-
 }
 
