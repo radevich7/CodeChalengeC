@@ -15,57 +15,44 @@ namespace CodeChallenges
     class Tests
     {
 
-        static public ListNode DeleteDuplicates(ListNode head)
+      static  public int MaxProfit(int[] prices)
         {
-            if (head == null) return head;
-            ListNode temp = head;
-            while (temp.next != null)
+            int minprice = int.MaxValue;
+            int maxprofit = 0;
+
+            for (int i = 0; i < prices.Length; i++)
             {
-                if (temp.val == temp.next.val)
+                if (prices[i] < minprice)
                 {
-                    temp.next = temp.next.next;
+                    minprice = prices[i];
                 }
-                else
+                else if (prices[i] - minprice > maxprofit)
                 {
-                    temp = temp.next;
+                    maxprofit = prices[i] - minprice;
                 }
             }
-            return head;
+
+            return maxprofit;
         }
 
 
 
     }
 
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
+   
 
     class Program
     {
 
         static void Main(string[] args)
         {
-            ListNode listNode = new ListNode();
-            listNode.val = 1;
-
-            ListNode listnode1 = new ListNode(1,listNode);
-            ListNode listnode2 = new ListNode(3, listnode1);
-            ListNode listnode3 = new ListNode(1, listnode2);
-
+         
           
 
 
 
 
-            Console.WriteLine(Tests.DeleteDuplicates(listnode3));
+            Console.WriteLine(Tests.MaxProfit(new int[] {7, 1, 5, 3, 6, 4}));
 
             Console.ReadKey();
         }
